@@ -1,6 +1,6 @@
 ﻿namespace FluentAPI.FluentUserApi;
 
-public interface IBuildRoleEntitlements
+public interface IBuildApplicableUserRoleEntitlements
 {
     public IBuildDataEntitlements WithApplicableEntitlements(
         ApplicableDataEntitlementTypes applicableDataEntitlementTypes);

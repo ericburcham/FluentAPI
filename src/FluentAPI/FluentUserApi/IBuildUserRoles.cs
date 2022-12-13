@@ -2,5 +2,5 @@
 
 public interface IBuildUserRoles
 {
-    public IBuildRoleEntitlements InRole(string role);
+    public IBuildApplicableUserRoleEntitlements InRole(string role);
 }

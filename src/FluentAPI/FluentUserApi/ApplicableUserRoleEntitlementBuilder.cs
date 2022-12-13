@@ -2,13 +2,13 @@
 
 namespace FluentAPI.FluentUserApi;
 
-public class RoleEntitlementBuilder : IBuildRoleEntitlements
+public class ApplicableUserRoleEntitlementBuilder : IBuildApplicableUserRoleEntitlements
 {
     private readonly IRepository _repository;
     private readonly string _role;
     private readonly string _username;
 
-    public RoleEntitlementBuilder(IRepository repository, string username, string role)
+    public ApplicableUserRoleEntitlementBuilder(IRepository repository, string username, string role)
     {
         _repository = repository;
         _username = username;

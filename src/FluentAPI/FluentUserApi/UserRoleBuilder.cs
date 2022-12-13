@@ -13,8 +13,8 @@ public class UserRoleBuilder : IBuildUserRoles
         _username = username;
     }
 
-    public IBuildRoleEntitlements InRole(string role)
+    public IBuildApplicableUserRoleEntitlements InRole(string role)
     {
-        return new RoleEntitlementBuilder(_repository, _username, role);
+        return new ApplicableUserRoleEntitlementBuilder(_repository, _username, role);
     }
 }

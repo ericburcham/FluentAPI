@@ -1,5 +1,4 @@
 ﻿using Highway.Data;
-using Highway.Data.Contexts;
 
 namespace FluentAPI.FluentUserApi;
 

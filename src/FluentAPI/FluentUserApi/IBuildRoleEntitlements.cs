@@ -2,5 +2,6 @@
 
 public interface IBuildRoleEntitlements
 {
-    public IBuildDataEntitlements WithApplicableEntitlements( ApplicableDataEntitlementTypes applicableDataEntitlementTypes);
+    public IBuildDataEntitlements WithApplicableEntitlements(
+        ApplicableDataEntitlementTypes applicableDataEntitlementTypes);
 }

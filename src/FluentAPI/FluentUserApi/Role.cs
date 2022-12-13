@@ -2,19 +2,19 @@
 
 public class Role : Entity
 {
-    public string Name { get; set; }
-    public ApplicableDataEntitlementTypes ApplicableDataEntitlementTypes { get; set; }
-
     public Role(string name, ApplicableDataEntitlementTypes applicableDataEntitlementTypes)
     {
         Name = name;
         ApplicableDataEntitlementTypes = applicableDataEntitlementTypes;
     }
 
+    public string Name { get; set; }
+    public ApplicableDataEntitlementTypes ApplicableDataEntitlementTypes { get; set; }
+
+    public UserRole UserRole { get; set; } = null!;
+
     internal void SetUserRole(UserRole userRole)
     {
         UserRole = userRole;
     }
-
-    public UserRole UserRole { get; set; } = null!;
 }

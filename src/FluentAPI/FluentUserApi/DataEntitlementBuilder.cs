@@ -4,13 +4,14 @@ namespace FluentAPI.FluentUserApi;
 
 public class DataEntitlementBuilder : IBuildDataEntitlements
 {
-    private readonly IRepository _repository;
-    private readonly string _username;
-    private readonly string _role;
     private readonly ApplicableDataEntitlementTypes _applicableDataEntitlementTypes;
-    private readonly Dictionary<SecuredRoot,IEnumerable<long>> _dataEntitlements = new Dictionary<SecuredRoot, IEnumerable<long>>();
+    private readonly Dictionary<SecuredRoot, IEnumerable<long>> _dataEntitlements = new();
+    private readonly IRepository _repository;
+    private readonly string _role;
+    private readonly string _username;
 
-    public DataEntitlementBuilder(IRepository repository, string username, string role, ApplicableDataEntitlementTypes applicableDataEntitlementTypes)
+    public DataEntitlementBuilder(IRepository repository, string username, string role,
+        ApplicableDataEntitlementTypes applicableDataEntitlementTypes)
     {
         _repository = repository;
         _username = username;
@@ -40,10 +41,7 @@ public class DataEntitlementBuilder : IBuildDataEntitlements
     private void SaveUserRole(User user, Role role)
     {
         var userRole = new UserRole(user, role);
-        foreach (var dataEntitlement in _dataEntitlements)
-        {
-            userRole.AddEntitlement(dataEntitlement);
-        }
+        foreach (var dataEntitlement in _dataEntitlements) userRole.AddEntitlement(dataEntitlement);
 
         _repository.Context.Add(userRole);
     }
